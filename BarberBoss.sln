@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{60554F91-41FC-4549-8123-575E8731BE31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Api", "src\BarberBoss.Api\BarberBoss.Api.csproj", "{DB7F0378-8618-4C7E-A40D-36D1898EDFA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Application", "src\BarberBoss.Application\BarberBoss.Application.csproj", "{FF68CE37-7238-4F6D-979F-9B221E060B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Domain", "src\BarberBoss.Domain\BarberBoss.Domain.csproj", "{1AFE264E-7068-4DC5-87D5-7C2BA2E5F813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Exceptions", "src\BarberBoss.Exceptions\BarberBoss.Exceptions.csproj", "{37095B08-4E21-4606-8C58-26B13D5529C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberBoss.Infraestructure", "src\BarberBoss.Infraestructure\BarberBoss.Infraestructure.csproj", "{79E69BB9-F7C5-4BB3-BAAB-5383F7A3953D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB7F0378-8618-4C7E-A40D-36D1898EDFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB7F0378-8618-4C7E-A40D-36D1898EDFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB7F0378-8618-4C7E-A40D-36D1898EDFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB7F0378-8618-4C7E-A40D-36D1898EDFA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF68CE37-7238-4F6D-979F-9B221E060B80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF68CE37-7238-4F6D-979F-9B221E060B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF68CE37-7238-4F6D-979F-9B221E060B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF68CE37-7238-4F6D-979F-9B221E060B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AFE264E-7068-4DC5-87D5-7C2BA2E5F813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AFE264E-7068-4DC5-87D5-7C2BA2E5F813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AFE264E-7068-4DC5-87D5-7C2BA2E5F813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AFE264E-7068-4DC5-87D5-7C2BA2E5F813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37095B08-4E21-4606-8C58-26B13D5529C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37095B08-4E21-4606-8C58-26B13D5529C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37095B08-4E21-4606-8C58-26B13D5529C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37095B08-4E21-4606-8C58-26B13D5529C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E69BB9-F7C5-4BB3-BAAB-5383F7A3953D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E69BB9-F7C5-4BB3-BAAB-5383F7A3953D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E69BB9-F7C5-4BB3-BAAB-5383F7A3953D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E69BB9-F7C5-4BB3-BAAB-5383F7A3953D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB7F0378-8618-4C7E-A40D-36D1898EDFA7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FF68CE37-7238-4F6D-979F-9B221E060B80} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1AFE264E-7068-4DC5-87D5-7C2BA2E5F813} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{37095B08-4E21-4606-8C58-26B13D5529C2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{79E69BB9-F7C5-4BB3-BAAB-5383F7A3953D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BE389C8-5062-426E-A92B-88439D25F35E}
+	EndGlobalSection
+EndGlobal
