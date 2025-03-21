@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BarberBoss.Application\BarberBoss.Application.csproj" />
+    <ProjectReference Include="..\BarberBoss.Communication\BarberBoss.Communication.csproj" />
+    <ProjectReference Include="..\BarberBoss.Infrastructure\BarberBoss.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

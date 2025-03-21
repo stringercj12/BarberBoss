@@ -4,6 +4,6 @@ namespace BarberBoss.Domain.Repositories
 {
     public interface IInvoicingRepository
     {
-        void Add(Invoicing invoicing);
+        Task Add(Invoicing invoicing);
     }
 }
