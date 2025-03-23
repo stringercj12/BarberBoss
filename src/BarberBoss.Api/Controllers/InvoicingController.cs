@@ -3,6 +3,7 @@ using BarberBoss.Communication.Requests;
 using BarberBoss.Application.UseCases.Invoicings.Create;
 using BarberBoss.Communication.Responses;
 using BarberBoss.Application.UseCases.Invoicings.GetAll;
+using BarberBoss.Application.UseCases.Invoicings.GetById;
 
 namespace BarberBoss.Api.Controllers;
 
@@ -34,4 +35,15 @@ public class InvoicingController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpGet("/{id}")]
+    [ProducesResponseType(typeof(ResponseInvoicingJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> GetInvoicingIById([FromServices] IInvoicingGetByIdUseCase useCase, long id)
+    {
+        var response = await useCase.Execute(id);
+
+        return Ok(response);
+    }
+
 }

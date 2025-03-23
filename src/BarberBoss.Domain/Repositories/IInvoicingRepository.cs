@@ -6,5 +6,6 @@ namespace BarberBoss.Domain.Repositories
     {
         Task Add(Invoicing invoicing);
         Task<List<Invoicing>> GetAll();
+        Task<Invoicing?> GetById(long id);
     }
 }

@@ -24,4 +24,9 @@ public class InvoicingRepository : IInvoicingRepository
     {
       return await _context.Invoicings.AsNoTracking().ToListAsync();
     }
+
+    public async Task<Invoicing?> GetById(long id)
+    {
+       return await _context.Invoicings.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+    }
 }
