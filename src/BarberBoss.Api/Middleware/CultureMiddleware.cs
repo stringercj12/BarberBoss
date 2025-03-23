@@ -16,7 +16,7 @@ namespace BarberBoss.Api.Middleware
         {
             var supportedLanguages = CultureInfo.GetCultures(CultureTypes.AllCultures).ToList();
 
-            var requestedCulture = context.Request.Headers["Accept-Language"].ToString();
+            var requestedCulture = context.Request.Headers.AcceptLanguage.ToString();
 
             var cultureInfo = new CultureInfo("en");
 

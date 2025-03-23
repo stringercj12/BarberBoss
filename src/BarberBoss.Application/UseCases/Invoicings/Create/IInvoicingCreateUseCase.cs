@@ -5,6 +5,6 @@ namespace BarberBoss.Application.UseCases.Invoicings.Create
 {
     public interface IInvoicingCreateUseCase
     {
-        Task<ResponseInovoicingCreateJson> Execute(RequestInvoicingJson request);
+        Task<ResponseInvoicingCreateJson> Execute(RequestInvoicingJson request);
     }
 }

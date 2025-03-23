@@ -19,7 +19,7 @@ namespace BarberBoss.Application.UseCases.Invoicings.Create
             _autoMapper = autoMapper;
         }
 
-        public async Task<ResponseInovoicingCreateJson> Execute(RequestInvoicingJson request)
+        public async Task<ResponseInvoicingCreateJson> Execute(RequestInvoicingJson request)
         {
             Validate(request);
 
@@ -27,7 +27,7 @@ namespace BarberBoss.Application.UseCases.Invoicings.Create
 
             await _invoicingRepository.Add(invoicing);
 
-            return _autoMapper.Map<ResponseInovoicingCreateJson>(invoicing);
+            return _autoMapper.Map<ResponseInvoicingCreateJson>(invoicing);
         }
 
 

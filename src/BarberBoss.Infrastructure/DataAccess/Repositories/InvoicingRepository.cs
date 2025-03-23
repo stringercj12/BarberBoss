@@ -1,5 +1,6 @@
 using BarberBoss.Domain.Entities;
 using BarberBoss.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace BarberBoss.Infraestructure.DataAccess.Repositories;
 
@@ -19,4 +20,8 @@ public class InvoicingRepository : IInvoicingRepository
         _context.SaveChanges();
     }
 
+    public async Task<List<Invoicing>> GetAll()
+    {
+      return await _context.Invoicings.AsNoTracking().ToListAsync();
+    }
 }
