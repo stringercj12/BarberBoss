@@ -53,4 +53,18 @@ public class InvoicingRepository : IInvoicingWriteOnlyRepository, IInvoicingRead
         return true;
     }
 
+    public Task<List<Invoicing>> FilterByMonth(DateOnly month)
+    {
+
+        var startDate = new DateTime(year: month.Year, month: month.Month, day: 1).Date;
+
+        var daysInMonth = DateTime.DaysInMonth(year: month.Year, month: month.Month);
+        var endDate = new DateTime(year: month.Year, month: month.Month, day: daysInMonth, hour: 23, minute: 59, second: 59).Date;
+
+        return _context.Invoicings
+            .Where(invoicing => invoicing.Date >= startDate && invoicing.Date <= endDate)
+            .OrderBy(invoicing => invoicing.Date)
+            .ThenBy(invoicing => invoicing.Title)
+            .ToListAsync();
+    }
 }

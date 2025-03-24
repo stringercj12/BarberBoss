@@ -6,5 +6,7 @@ namespace BarberBoss.Domain.Repositories
     {
         Task<List<Invoicing>> GetAll();
         Task<Invoicing?> GetById(long id);
+
+        Task<List<Invoicing>> FilterByMonth(DateOnly month);
     }
 }

@@ -6,4 +6,31 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Remove="ResourcesMessages\Reports\ResourceReportGenerationMessages.pt-BR.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ResourcesMessages\Reports\ResourceReportGenerationMessages.pt-BR.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>ResourceReportGenerationMessages.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ResourcesMessages\Reports\ResourceReportGenerationMessages.Designer.cs">
+      <DependentUpon>ResourceReportGenerationMessages.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ResourcesMessages\Reports\ResourceReportGenerationMessages.resx">
+      <LastGenOutput>ResourceReportGenerationMessages.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

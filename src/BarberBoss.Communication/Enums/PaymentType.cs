@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BarberBoss.Communication.Enums
+﻿namespace BarberBoss.Communication.Enums
 {
     public enum PaymentType
     {
-        CreditCardAttribute = 1,
+        Cash = 0,
+        CreditCard = 1,
+        DebitCard = 2,
+        EletronicTransfer = 3
     }
 }

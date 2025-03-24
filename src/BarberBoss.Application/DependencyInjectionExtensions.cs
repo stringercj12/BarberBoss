@@ -5,6 +5,8 @@ using BarberBoss.Application.UseCases.Invoicings.GetAll;
 using BarberBoss.Application.UseCases.Invoicings.GetById;
 using BarberBoss.Application.UseCases.Invoicings.Update;
 using BarberBoss.Application.UseCases.Invoicings.Delete;
+using BarberBoss.Application.UseCases.Invoicings.Reports.Excel;
+using BarberBoss.Application.UseCases.Invoicings.Reports.Pdf;
 
 namespace BarberBoss.Application
 {
@@ -28,6 +30,8 @@ namespace BarberBoss.Application
             service.AddScoped<IInvoicingGetByIdUseCase, InvoicingGetByIdUseCase>();
             service.AddScoped<IInvoicingUpdateUseCase, InvoicingUpdateUseCase>();
             service.AddScoped<IInvoicingDeleteUseCase, InvoicingDeleteUseCase>();
+            service.AddScoped<UseCases.Invoicings.Reports.Pdf.IGenerateInvoicingsReportExcelUseCase, GenerateInvoicingsReportPdfUseCase>();
+            service.AddScoped<UseCases.Invoicings.Reports.Excel.IGenerateInvoicingsReportExcelUseCase, GenerateInvoicingsReportExcelUseCase>();
         }
     }
 }
