@@ -4,6 +4,8 @@ using BarberBoss.Application.UseCases.Invoicings.Create;
 using BarberBoss.Communication.Responses;
 using BarberBoss.Application.UseCases.Invoicings.GetAll;
 using BarberBoss.Application.UseCases.Invoicings.GetById;
+using BarberBoss.Application.UseCases.Invoicings.Update;
+using BarberBoss.Application.UseCases.Invoicings.Delete;
 
 namespace BarberBoss.Api.Controllers;
 
@@ -36,14 +38,40 @@ public class InvoicingController : ControllerBase
         return NoContent();
     }
 
-    [HttpGet("/{id}")]
+    [HttpGet("{id}")]
     [ProducesResponseType(typeof(ResponseInvoicingJson), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> GetInvoicingIById([FromServices] IInvoicingGetByIdUseCase useCase, long id)
+    public async Task<IActionResult> GetInvoicingById([FromServices] IInvoicingGetByIdUseCase useCase, long id)
     {
         var response = await useCase.Execute(id);
 
         return Ok(response);
     }
 
+    [HttpPut("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> UpdateInvoicing(
+        [FromServices] IInvoicingUpdateUseCase useCase,
+        [FromBody] RequestInvoicingJson request,
+        [FromRoute] long id)
+    {
+        await useCase.Execute(id, request);
+
+        return NoContent();
+
+    }
+
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> DeleteInvoicing(
+        [FromServices] IInvoicingDeleteUseCase useCase,
+        [FromRoute] long id)
+    {
+        await useCase.Execute(id);
+
+        return NoContent();
+
+    }
 }

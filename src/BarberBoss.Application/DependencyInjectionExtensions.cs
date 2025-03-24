@@ -3,6 +3,8 @@ using BarberBoss.Application.AutoMapper;
 using BarberBoss.Application.UseCases.Invoicings.Create;
 using BarberBoss.Application.UseCases.Invoicings.GetAll;
 using BarberBoss.Application.UseCases.Invoicings.GetById;
+using BarberBoss.Application.UseCases.Invoicings.Update;
+using BarberBoss.Application.UseCases.Invoicings.Delete;
 
 namespace BarberBoss.Application
 {
@@ -24,6 +26,8 @@ namespace BarberBoss.Application
             service.AddScoped<IInvoicingCreateUseCase, InvoicingCreateUseCase>();
             service.AddScoped<IInvoicingGetAllUseCase, InvoicingGetAllUseCase>();
             service.AddScoped<IInvoicingGetByIdUseCase, InvoicingGetByIdUseCase>();
+            service.AddScoped<IInvoicingUpdateUseCase, InvoicingUpdateUseCase>();
+            service.AddScoped<IInvoicingDeleteUseCase, InvoicingDeleteUseCase>();
         }
     }
 }

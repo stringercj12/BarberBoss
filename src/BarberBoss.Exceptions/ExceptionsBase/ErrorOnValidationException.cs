@@ -4,7 +4,7 @@ namespace BarberBoss.Exceptions.ExceptionsBase
 {
     public class ErrorOnValidationException : BarberBossException
     {
-        private readonly List<string> _errors = [];
+        private readonly List<string> _errors;
         public ErrorOnValidationException(List<string> errorMessages) : base(string.Empty)
         {
             _errors = errorMessages;

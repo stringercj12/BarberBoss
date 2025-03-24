@@ -7,10 +7,10 @@ namespace BarberBoss.Application.UseCases.Invoicings.GetAll
     class InvoicingGetAllUseCase : IInvoicingGetAllUseCase
     {
 
-        private readonly IInvoicingRepository _invoicingRepository;
+        private readonly IInvoicingReadOnlyRepository _invoicingRepository;
         private readonly IMapper _mapper;
 
-        public InvoicingGetAllUseCase(IInvoicingRepository invoicingRepository, IMapper mapper)
+        public InvoicingGetAllUseCase(IInvoicingReadOnlyRepository invoicingRepository, IMapper mapper)
         {
             _invoicingRepository = invoicingRepository;
             _mapper = mapper;

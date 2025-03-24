@@ -9,11 +9,11 @@ namespace BarberBoss.Application.UseCases.Invoicings.Create
 {
     class InvoicingCreateUseCase : IInvoicingCreateUseCase
     {
-        private readonly IInvoicingRepository _invoicingRepository;
+        private readonly IInvoicingWriteOnlyRepository _invoicingRepository;
 
         private readonly IMapper _autoMapper;
 
-        public InvoicingCreateUseCase(IInvoicingRepository invoicingRepository, IMapper autoMapper)
+        public InvoicingCreateUseCase(IInvoicingWriteOnlyRepository invoicingRepository, IMapper autoMapper)
         {
             _invoicingRepository = invoicingRepository;
             _autoMapper = autoMapper;

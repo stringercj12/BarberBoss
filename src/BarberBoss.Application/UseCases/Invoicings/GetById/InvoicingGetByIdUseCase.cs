@@ -6,10 +6,10 @@ namespace BarberBoss.Application.UseCases.Invoicings.GetById
 {
     public class InvoicingGetByIdUseCase : IInvoicingGetByIdUseCase
     {
-        private readonly IInvoicingRepository _invoicingRespository;
+        private readonly IInvoicingReadOnlyRepository _invoicingRespository;
         private readonly IMapper _mapper;
 
-        public InvoicingGetByIdUseCase(IInvoicingRepository invoicingRespository, IMapper mapper)
+        public InvoicingGetByIdUseCase(IInvoicingReadOnlyRepository invoicingRespository, IMapper mapper)
         {
             _invoicingRespository = invoicingRespository;
             _mapper = mapper;

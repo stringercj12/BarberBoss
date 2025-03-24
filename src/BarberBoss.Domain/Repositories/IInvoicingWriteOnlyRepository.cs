@@ -2,10 +2,9 @@ using BarberBoss.Domain.Entities;
 
 namespace BarberBoss.Domain.Repositories
 {
-    public interface IInvoicingRepository
+    public interface IInvoicingWriteOnlyRepository
     {
         Task Add(Invoicing invoicing);
-        Task<List<Invoicing>> GetAll();
-        Task<Invoicing?> GetById(long id);
+        Task<bool> Delete(long id);
     }
 }
