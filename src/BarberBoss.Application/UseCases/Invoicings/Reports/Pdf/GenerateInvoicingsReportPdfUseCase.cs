@@ -11,7 +11,7 @@ using PdfSharp.Fonts;
 
 namespace BarberBoss.Application.UseCases.Invoicings.Reports.Pdf
 {
-    public class GenerateInvoicingsReportPdfUseCase : IGenerateInvoicingsReportExcelUseCase
+    public class GenerateInvoicingsReportPdfUseCase : IGenerateInvoicingsReportPdfUseCase
     {
         private const string CURRENCY_SIMBOL = "$";
         private const int HEIGHT_ROW_INVOICING_TABLE = 25;

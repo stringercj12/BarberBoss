@@ -2,6 +2,7 @@
 using BarberBoss.Domain.Extensions;
 using ClosedXML.Excel;
 using BarberBoss.Domain.ResourcesMessages.Reports;
+using DocumentFormat.OpenXml.Presentation;
 
 namespace BarberBoss.Application.UseCases.Invoicings.Reports.Excel
 {
@@ -29,11 +30,12 @@ namespace BarberBoss.Application.UseCases.Invoicings.Reports.Excel
 
             workbook.Author = "Jefferson Ferreira";
             workbook.Style.Font.FontSize = 12;
-            workbook.Style.Font.FontName = "Times New Roman";
+            workbook.Style.Font.FontName = "BebasNeue-Regular";
 
             var worksheet = workbook.Worksheets.Add(month.ToString("Y"));
 
             InsertHeader(worksheet);
+
             var raw = 2;
 
             foreach (var invoicing in invocings)
@@ -44,7 +46,10 @@ namespace BarberBoss.Application.UseCases.Invoicings.Reports.Excel
 
                 worksheet.Cell($"D{raw}").Value = invoicing.Amount;
                 worksheet.Cell($"D{raw}").Style.NumberFormat.Format = $"-{CURRENCY_SIMBOL} #,##0.00";
+
                 worksheet.Cell($"E{raw}").Value = invoicing.Description;
+
+                worksheet.Cells($"A{raw}:E{raw}").Style.Font.Bold = false;
 
                 raw++;
             }
@@ -59,15 +64,16 @@ namespace BarberBoss.Application.UseCases.Invoicings.Reports.Excel
 
         private void InsertHeader(IXLWorksheet worksheet)
         {
-            worksheet.Cell("A1").Value = ResourceReportGenerationMessages.TITLE;
-            worksheet.Cell("B1").Value = ResourceReportGenerationMessages.DATE;
-            worksheet.Cell("C1").Value = ResourceReportGenerationMessages.PAYMENT_TYPE;
-            worksheet.Cell("D1").Value = ResourceReportGenerationMessages.AMOUNT;
-            worksheet.Cell("E1").Value = ResourceReportGenerationMessages.DESCRIPTION;
+            worksheet.Cell("A1").Value = ResourceReportGenerationMessages.TITLE.ToLower();
+            worksheet.Cell("B1").Value = ResourceReportGenerationMessages.DATE.ToLower();
+            worksheet.Cell("C1").Value = ResourceReportGenerationMessages.PAYMENT_TYPE.ToLower();
+            worksheet.Cell("D1").Value = ResourceReportGenerationMessages.AMOUNT.ToLower();
+            worksheet.Cell("E1").Value = ResourceReportGenerationMessages.DESCRIPTION.ToLower();
 
             worksheet.Cells("A1:E1").Style.Font.Bold = true;
 
             worksheet.Cells("A1:E1").Style.Fill.BackgroundColor = XLColor.FromHtml("#205858");
+            worksheet.Cells("A1:E1").Style.Font.FontColor = XLColor.FromHtml("#ffffff");
 
             worksheet.Cell("A1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             worksheet.Cell("B1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);

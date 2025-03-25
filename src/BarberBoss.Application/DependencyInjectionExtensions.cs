@@ -30,8 +30,8 @@ namespace BarberBoss.Application
             service.AddScoped<IInvoicingGetByIdUseCase, InvoicingGetByIdUseCase>();
             service.AddScoped<IInvoicingUpdateUseCase, InvoicingUpdateUseCase>();
             service.AddScoped<IInvoicingDeleteUseCase, InvoicingDeleteUseCase>();
-            service.AddScoped<UseCases.Invoicings.Reports.Pdf.IGenerateInvoicingsReportExcelUseCase, GenerateInvoicingsReportPdfUseCase>();
-            service.AddScoped<UseCases.Invoicings.Reports.Excel.IGenerateInvoicingsReportExcelUseCase, GenerateInvoicingsReportExcelUseCase>();
+            service.AddScoped<IGenerateInvoicingsReportPdfUseCase, GenerateInvoicingsReportPdfUseCase>();
+            service.AddScoped<IGenerateInvoicingsReportExcelUseCase, GenerateInvoicingsReportExcelUseCase>();
         }
     }
 }

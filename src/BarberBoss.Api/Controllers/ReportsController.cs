@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using BarberBoss.Application.UseCases.Invoicings.Reports.Excel;
 using BarberBoss.Application.UseCases.Invoicings.Reports.Pdf;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +29,7 @@ namespace BarberBoss.Api.Controllers
         [HttpGet("pdf")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> GetPdf([FromServices] IGenerateInvoicingsReportExcelUseCase useCase, [FromQuery] DateOnly month)
+        public async Task<IActionResult> GetPdf([FromServices] IGenerateInvoicingsReportPdfUseCase useCase, [FromQuery] DateOnly month)
         {
             byte[] file = await useCase.Execute(month);
 
