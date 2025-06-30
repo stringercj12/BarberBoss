@@ -12,11 +12,13 @@ namespace BarberBoss.Application.UseCases.Invoicings.Create
         private readonly IInvoicingWriteOnlyRepository _invoicingRepository;
 
         private readonly IMapper _autoMapper;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public InvoicingCreateUseCase(IInvoicingWriteOnlyRepository invoicingRepository, IMapper autoMapper)
+        public InvoicingCreateUseCase(IInvoicingWriteOnlyRepository invoicingRepository, IMapper autoMapper, IUnitOfWork unitOfWork)
         {
             _invoicingRepository = invoicingRepository;
             _autoMapper = autoMapper;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<ResponseInvoicingCreateJson> Execute(RequestInvoicingJson request)
@@ -26,6 +28,7 @@ namespace BarberBoss.Application.UseCases.Invoicings.Create
             var invoicing = _autoMapper.Map<Invoicing>(request);
 
             await _invoicingRepository.Add(invoicing);
+            await _unitOfWork.Commit();
 
             return _autoMapper.Map<ResponseInvoicingCreateJson>(invoicing);
         }

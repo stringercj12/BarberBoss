@@ -14,10 +14,10 @@ public class InvoicingRepository : IInvoicingWriteOnlyRepository, IInvoicingRead
         _context = context;
     }
 
+
     public async Task Add(Invoicing invoicing)
     {
         await _context.Invoicings.AddAsync(invoicing);
-        _context.SaveChanges();
     }
 
     public async Task<List<Invoicing>> GetAll()
